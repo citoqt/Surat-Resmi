@@ -8,6 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: surat_apk_whatsapp_ig_final
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,14 +29,10 @@ jobs:
           channel: 'stable'
 
       - name: Flutter pub get
-        run: |
-          cd surat_apk_whatsapp_ig_final
-          flutter pub get
+        run: flutter pub get
 
       - name: Build APK (debug, universal)
-        run: |
-          cd surat_apk_whatsapp_ig_final
-          flutter build apk --debug --no-tree-shake-icons
+        run: flutter build apk --debug --no-tree-shake-icons
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
