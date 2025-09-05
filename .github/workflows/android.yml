@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: surat_apk_whatsapp_ig_final
+        working-directory: surat-Resmi
 
     steps:
       - name: Checkout
@@ -38,4 +38,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: surat-debug-apk
-          path: surat_apk_whatsapp_ig_final/build/app/outputs/flutter-apk/app-debug.apk
+          path: surat-Resmi/build/app/outputs/flutter-apk/app-debug.apk
